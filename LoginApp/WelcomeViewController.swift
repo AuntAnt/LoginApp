@@ -1,5 +1,5 @@
 //
-//  GreetingViewController.swift
+//  WelcomeViewController.swift
 //  LoginApp
 //
 //  Created by Anton Kuzmin on 13.02.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class GreetingViewController: UIViewController {
+class WelcomeViewController: UIViewController {
 
     @IBOutlet var greetingLabel: UILabel!
     
