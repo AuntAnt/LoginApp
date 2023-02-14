@@ -46,14 +46,21 @@ final class LoginViewController: UIViewController {
     
     private func verifyLoginAndPassword() {
         if userNameTF.text != login || passwordTF.text != pass {
-            showAlert(title: "Invalid login or password", message: "Please, enter correct login and password")
+            showAlert(
+                title: "Invalid login or password",
+                message: "Please, enter correct login and password"
+            )
         }
     }
 }
 
 extension LoginViewController {
     private func showAlert(title: String, message: String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alertController = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
         let okAction = UIAlertAction(title: "OK", style: .default) {_ in
             self.passwordTF.text = ""
         }
