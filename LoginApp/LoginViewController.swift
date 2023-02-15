@@ -24,18 +24,18 @@ final class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        verifyLoginAndPassword()
-        
         guard let greetingVC = segue.destination as? WelcomeViewController else { return }
         greetingVC.userName = userNameTF.text
     }
     
-    @IBAction func forgotButtonTapped(_ sender: UIButton) {
+    @IBAction func buttonTapped(_ sender: UIButton) {
         switch sender {
         case forgotUserNameButton:
             showAlert(title: "User name is:", message: login)
-        default:
+        case forgotPasswordButton:
             showAlert(title: "Password is:", message: pass)
+        default:
+            verifyLoginAndPassword()
         }
     }
     
