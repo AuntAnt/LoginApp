@@ -12,9 +12,6 @@ final class LoginViewController: UIViewController {
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
-    @IBOutlet var forgotUserNameButton: UIButton!
-    @IBOutlet var forgotPasswordButton: UIButton!
-    
     private let login = "1"
     private let pass = "1"
     
@@ -28,15 +25,13 @@ final class LoginViewController: UIViewController {
         greetingVC.userName = userNameTF.text
     }
     
-    @IBAction func buttonTapped(_ sender: UIButton) {
-        switch sender {
-        case forgotUserNameButton:
-            showAlert(title: "User name is:", message: login)
-        case forgotPasswordButton:
-            showAlert(title: "Password is:", message: pass)
-        default:
-            verifyLoginAndPassword()
-        }
+    @IBAction func forgotButtonTapped(_ sender: UIButton) {
+        sender.tag == 0
+        ? showAlert(title: "User name is:", message: login)
+        : showAlert(title: "Password is:", message: pass)
+    }
+    @IBAction func loginButtonTapped() {
+        verifyLoginAndPassword()
     }
     
     @IBAction func unwindTo(_ unwindSegue: UIStoryboardSegue) {
@@ -48,21 +43,24 @@ final class LoginViewController: UIViewController {
         if userNameTF.text != login || passwordTF.text != pass {
             showAlert(
                 title: "Invalid login or password",
-                message: "Please, enter correct login and password"
+                message: "Please, enter correct login and password",
+                fieldToClear: passwordTF
             )
+        } else {
+            performSegue(withIdentifier: "showWelcomeVC", sender: nil)
         }
     }
 }
 
 extension LoginViewController {
-    private func showAlert(title: String, message: String) {
+    private func showAlert(title: String, message: String, fieldToClear: UITextField? = nil) {
         let alertController = UIAlertController(
             title: title,
             message: message,
             preferredStyle: .alert
         )
         let okAction = UIAlertAction(title: "OK", style: .default) {_ in
-            self.passwordTF.text = ""
+            fieldToClear?.text = ""
         }
         
         alertController.addAction(okAction)
