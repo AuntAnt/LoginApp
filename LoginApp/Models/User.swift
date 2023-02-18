@@ -8,12 +8,14 @@
 import Foundation
 
 struct User {
-    let login: String
-    let password: String
+    let login = "User"
+    let password = "pass"
     let person: Person
 }
 
-
 struct Person {
-    let name: String
+    let name = "Anton"
+    let surname = "Kuzmin"
+    let company = "LANIT"
+    let job = "QA Automation Engineer"
 }

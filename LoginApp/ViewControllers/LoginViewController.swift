@@ -12,8 +12,14 @@ final class LoginViewController: UIViewController {
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
-    private let login = "1"
-    private let pass = "1"
+    let user = User(person: Person())
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        userNameTF.text = user.login
+        passwordTF.text = user.password
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
@@ -21,14 +27,25 @@ final class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let greetingVC = segue.destination as? WelcomeViewController else { return }
-        greetingVC.userName = userNameTF.text
+        guard let tabBarVC = segue.destination as? UITabBarController else { return }
+        guard let viewControllers = tabBarVC.viewControllers else { return }
+        
+        viewControllers.forEach { viewController in
+            if let welcomeVC = viewController as? WelcomeViewController {
+                welcomeVC.userName = "\(user.person.name) \(user.person.surname)"
+            } else if let aboutMeVc = viewController as? AboutMeViewController {
+                aboutMeVc.name = user.person.name
+                aboutMeVc.surname = user.person.surname
+                aboutMeVc.company = user.person.company
+                aboutMeVc.job = user.person.job
+            }
+        }
     }
     
     @IBAction func forgotButtonTapped(_ sender: UIButton) {
         sender.tag == 0
-        ? showAlert(title: "User name is:", message: login)
-        : showAlert(title: "Password is:", message: pass)
+        ? showAlert(title: "User name is:", message: user.login)
+        : showAlert(title: "Password is:", message: user.password)
     }
     @IBAction func loginButtonTapped() {
         verifyLoginAndPassword()
@@ -40,7 +57,7 @@ final class LoginViewController: UIViewController {
     }
     
     private func verifyLoginAndPassword() {
-        if userNameTF.text != login || passwordTF.text != pass {
+        if userNameTF.text != user.login || passwordTF.text != user.password {
             showAlert(
                 title: "Invalid login or password",
                 message: "Please, enter correct login and password",
