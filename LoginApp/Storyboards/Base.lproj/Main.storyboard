@@ -206,10 +206,10 @@
             </objects>
             <point key="canvasLocation" x="1742" y="791"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="ss0-dc-G6N">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="SJF-uz-fIC" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="SJF-uz-fIC" customClass="TabBarViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TbT-6h-ejY">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -232,7 +232,7 @@
                     <tabBarItem key="tabBarItem" title="About me" image="person.fill" catalog="system" id="am7-Y6-OxS"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="dwt-BB-czv">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="92.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="98.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
