@@ -33,11 +33,9 @@ final class LoginViewController: UIViewController {
         viewControllers.forEach { viewController in
             if let welcomeVC = viewController as? WelcomeViewController {
                 welcomeVC.userName = "\(user.person.name) \(user.person.surname)"
-            } else if let aboutMeVc = viewController as? AboutMeViewController {
-                aboutMeVc.name = user.person.name
-                aboutMeVc.surname = user.person.surname
-                aboutMeVc.company = user.person.company
-                aboutMeVc.job = user.person.job
+            } else if let navigationVC = viewController as? UINavigationController {
+                guard let aboutMeVc = navigationVC.topViewController as? AboutMeViewController else { return }
+                aboutMeVc.user = user
             }
         }
     }

@@ -9,7 +9,7 @@ import UIKit
 
 final class AboutMeViewController: UIViewController {
 
-    @IBOutlet var fullNameLabel: UILabel!
+
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var surnameLabel: UILabel!
     @IBOutlet var companyLabel: UILabel!
@@ -17,24 +17,29 @@ final class AboutMeViewController: UIViewController {
     
     @IBOutlet var avatarImageView: UIImageView!
     
-    var name: String!
-    var surname: String!
-    var company: String!
-    var job: String!
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let name = name, let surname = surname, let company = company, let job = job {
-            fullNameLabel.text = "\(name) \(surname)"
-            nameLabel.text = (nameLabel.text ?? "Name: ") + name
-            surnameLabel.text = (surnameLabel.text ?? "Surname: ") + surname
-            companyLabel.text = (companyLabel.text ?? "Company: ") + company
-            jobPositionLabel.text = (jobPositionLabel.text ?? "Position: ") + job
+        if let user = user {
+            self.navigationItem.title = "\(user.person.name) \(user.person.surname)"
+            
+            nameLabel.text = (nameLabel.text ?? "Name: ") + user.person.name
+            surnameLabel.text = (surnameLabel.text ?? "Surname: ") + user.person.surname
+            companyLabel.text = (companyLabel.text ?? "Company: ") + user.person.company
+            jobPositionLabel.text = (jobPositionLabel.text ?? "Position: ") + user.person.job
         }
     }
     
-    override func viewWillLayoutSubviews() {
+    override func viewDidAppear(_ animated: Bool) {
         avatarImageView.layer.cornerRadius = avatarImageView.frame.height / 2
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let moreInfoVC = segue.destination as? MoreInfoViewController else { return }
+        
+        moreInfoVC.user = user
     }
 }
