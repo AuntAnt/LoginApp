@@ -8,10 +8,6 @@
 import UIKit
 
 final class ContactsViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
     
     @IBAction func openLinkButton(_ sender: UIButton) {
          
