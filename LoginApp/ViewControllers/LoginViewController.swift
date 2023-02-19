@@ -12,7 +12,7 @@ final class LoginViewController: UIViewController {
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
-    let user = User(
+    private let user = User(
         login: "User",
         password: "pass",
         person: Person(
