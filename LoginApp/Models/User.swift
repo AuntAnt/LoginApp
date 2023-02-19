@@ -20,7 +20,7 @@ struct Person {
     let job: String
 }
 
-enum Socials: String {
+enum Social: String {
     case telegram = "https://telegram.org"
     case habrCareer = "https://career.habr.com"
 }

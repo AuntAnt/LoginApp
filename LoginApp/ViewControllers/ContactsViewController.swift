@@ -13,8 +13,8 @@ final class ContactsViewController: UIViewController {
          
         guard let url = URL(
             string: sender.tag == 0
-            ? Socials.telegram.rawValue
-            : Socials.habrCareer.rawValue
+            ? Social.telegram.rawValue
+            : Social.habrCareer.rawValue
         ) else { return }
         
         UIApplication.shared.open(url)
