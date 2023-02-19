@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B247E3329A203C100CEE0C9 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B247E3229A203C100CEE0C9 /* ContactsViewController.swift */; };
 		9B7C645929A0EE67005E0B99 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C645829A0EE67005E0B99 /* AboutMeViewController.swift */; };
 		9B7C645D29A11515005E0B99 /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C645C29A11515005E0B99 /* MoreInfoViewController.swift */; };
 		9B7C645F29A1287D005E0B99 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B7C645E29A1287D005E0B99 /* TabBarViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B247E3229A203C100CEE0C9 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		9B7C645829A0EE67005E0B99 /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
 		9B7C645C29A11515005E0B99 /* MoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoViewController.swift; sourceTree = "<group>"; };
 		9B7C645E29A1287D005E0B99 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				9B7C645829A0EE67005E0B99 /* AboutMeViewController.swift */,
 				9B7C645C29A11515005E0B99 /* MoreInfoViewController.swift */,
 				9B7C645E29A1287D005E0B99 /* TabBarViewController.swift */,
+				9B247E3229A203C100CEE0C9 /* ContactsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				9B904796299979C7004A9484 /* AppDelegate.swift in Sources */,
 				9B904798299979C7004A9484 /* SceneDelegate.swift in Sources */,
 				9B7C645D29A11515005E0B99 /* MoreInfoViewController.swift in Sources */,
+				9B247E3329A203C100CEE0C9 /* ContactsViewController.swift in Sources */,
 				9BF2EF5C299EA41E0045707B /* User.swift in Sources */,
 				9B7C645929A0EE67005E0B99 /* AboutMeViewController.swift in Sources */,
 				9BB22E35299A8FB700144715 /* WelcomeViewController.swift in Sources */,
