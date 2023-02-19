@@ -19,7 +19,8 @@ final class LoginViewController: UIViewController {
             name: "Anton",
             surname: "Kuzmin",
             company: "LANIT",
-            job: "QA Automation Engineer"
+            job: "QA Automation Engineer",
+            socials: [.telegram, .habrCareer]
         )
     )
     
@@ -45,6 +46,8 @@ final class LoginViewController: UIViewController {
             } else if let navigationVC = viewController as? UINavigationController {
                 guard let aboutMeVc = navigationVC.topViewController as? AboutMeViewController else { return }
                 aboutMeVc.user = user
+            } else if let contactVC = viewController as? ContactsViewController {
+                contactVC.user = user
             }
         }
     }

@@ -9,12 +9,14 @@ import UIKit
 
 final class ContactsViewController: UIViewController {
     
+    var user: User!
+    
     @IBAction func openLinkButton(_ sender: UIButton) {
          
         guard let url = URL(
             string: sender.tag == 0
-            ? Social.telegram.rawValue
-            : Social.habrCareer.rawValue
+            ? user.person.socials[0].rawValue
+            : user.person.socials[1].rawValue
         ) else { return }
         
         UIApplication.shared.open(url)

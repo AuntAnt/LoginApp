@@ -18,6 +18,7 @@ struct Person {
     let surname: String
     let company: String
     let job: String
+    let socials: [Social]
 }
 
 enum Social: String {
