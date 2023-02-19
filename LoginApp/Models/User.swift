@@ -16,13 +16,7 @@ struct User {
         User(
             login: "User",
             password: "pass",
-            person: Person(
-                name: "Anton",
-                surname: "Kuzmin",
-                company: "LANIT",
-                job: "QA Automation Engineer",
-                socials: [.telegram, .habrCareer]
-            )
+            person: Person.createPerson()
         )
     }
 }
@@ -33,6 +27,16 @@ struct Person {
     let company: String
     let job: String
     let socials: [Social]
+    
+    static func createPerson() -> Person {
+        Person(
+            name: "Anton",
+            surname: "Kuzmin",
+            company: "LANIT",
+            job: "QA Automation Engineer",
+            socials: [.telegram, .habrCareer]
+        )
+    }
 }
 
 enum Social: String {
