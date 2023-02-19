@@ -12,17 +12,7 @@ final class LoginViewController: UIViewController {
     @IBOutlet var userNameTF: UITextField!
     @IBOutlet var passwordTF: UITextField!
     
-    private let user = User(
-        login: "User",
-        password: "pass",
-        person: Person(
-            name: "Anton",
-            surname: "Kuzmin",
-            company: "LANIT",
-            job: "QA Automation Engineer",
-            socials: [.telegram, .habrCareer]
-        )
-    )
+    private let user = User.createUser()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +32,7 @@ final class LoginViewController: UIViewController {
         
         viewControllers.forEach { viewController in
             if let welcomeVC = viewController as? WelcomeViewController {
-                welcomeVC.userName = "\(user.person.name) \(user.person.surname)"
+                welcomeVC.user = user
             } else if let navigationVC = viewController as? UINavigationController {
                 guard let aboutMeVc = navigationVC.topViewController as? AboutMeViewController else { return }
                 aboutMeVc.user = user
@@ -57,6 +47,7 @@ final class LoginViewController: UIViewController {
         ? showAlert(title: "User name is:", message: user.login)
         : showAlert(title: "Password is:", message: user.password)
     }
+    
     @IBAction func loginButtonTapped() {
         verifyLoginAndPassword()
     }

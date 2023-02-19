@@ -11,6 +11,20 @@ struct User {
     let login: String
     let password: String
     let person: Person
+    
+    static func createUser() -> User {
+        User(
+            login: "User",
+            password: "pass",
+            person: Person(
+                name: "Anton",
+                surname: "Kuzmin",
+                company: "LANIT",
+                job: "QA Automation Engineer",
+                socials: [.telegram, .habrCareer]
+            )
+        )
+    }
 }
 
 struct Person {

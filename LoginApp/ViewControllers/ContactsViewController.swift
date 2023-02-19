@@ -15,8 +15,8 @@ final class ContactsViewController: UIViewController {
          
         guard let url = URL(
             string: sender.tag == 0
-            ? user.person.socials[0].rawValue
-            : user.person.socials[1].rawValue
+            ? user.person.socials.first?.rawValue ?? ""
+            : user.person.socials.last?.rawValue ?? ""
         ) else { return }
         
         UIApplication.shared.open(url)
