@@ -84,8 +84,8 @@
 				9BB22E34299A8FB700144715 /* WelcomeViewController.swift */,
 				9B7C645829A0EE67005E0B99 /* AboutMeViewController.swift */,
 				9B7C645C29A11515005E0B99 /* MoreInfoViewController.swift */,
-				9B7C645E29A1287D005E0B99 /* TabBarViewController.swift */,
 				9B247E3229A203C100CEE0C9 /* ContactsViewController.swift */,
+				9B7C645E29A1287D005E0B99 /* TabBarViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
